@@ -5,6 +5,7 @@ import com.pluralsight.service.CustomerServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 /**
  * Created by daniel.arlitt on 1/28/15.
@@ -15,6 +16,8 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
   @Bean(name = "customerService")
+//  @Scope("singleton")
+//  @Scope("prototype")
   public CustomerService getCustomerService() {
 
     // Autowired
