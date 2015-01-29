@@ -2,10 +2,8 @@ import com.pluralsight.repository.CustomerRepository;
 import com.pluralsight.repository.HibernateCustomerRepositoryImpl;
 import com.pluralsight.service.CustomerService;
 import com.pluralsight.service.CustomerServiceImpl;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 /**
  * Created by daniel.arlitt on 1/28/15.
@@ -13,7 +11,13 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 @ComponentScan({"com.pluralsight"})
+@PropertySource("app.properties")
 public class AppConfig {
+
+  @Bean
+  public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer() {
+    return new PropertySourcesPlaceholderConfigurer();
+  }
 
   @Bean(name = "customerService")
 //  @Scope("singleton")

@@ -20,6 +20,7 @@ public class Application {
     System.out.println(service2);
 
     System.out.println(service.findAll().get(0).getFirstname());
+    System.out.println(service.findAll().get(0).getLastname());
   }
 
 }
